@@ -1,0 +1,100 @@
+.gameboard-md {
+    display: inline-grid;
+    grid-template-columns: repeat(15, auto);
+    border-left: 1px solid #000000;
+    border-top: 1px solid #000000;
+}
+.gameboard-md-even {
+    display: inline-grid;
+    grid-template-columns: repeat(16, auto);
+    border-left: 1px solid #000000;
+    border-top: 1px solid #000000;
+}
+
+.gameboard-sm {
+    display: inline-grid;
+    grid-template-columns: repeat(7, auto);
+    border-left: 1px solid #000000;
+    border-top: 1px solid #000000;
+}
+
+    :is(.gameboard-md, .gameboard-md-even, .gameboard-sm) > .cell {
+        border-right: 1px solid #000000;
+        border-bottom: 1px solid #000000;
+        height: 50px;
+        width: 50px;
+    }
+
+    @media (max-width: 480px){
+        :is(.gameboard-md) > .cell {
+            border-right: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            height: 20px;
+            width: 20px;
+        }
+
+        :is(.gameboard-md-even) > .cell {
+            border-right: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            height: 20px;
+            width: 20px;
+        }
+    }
+
+    @media (min-width: 481px) and (max-width: 767px){
+        :is(.gameboard-md) > .cell {
+            border-right: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            height: 30px;
+            width: 30px;
+        }
+
+        :is(.gameboard-md-even) > .cell {
+            border-right: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            height: 30px;
+            width: 30px;
+        }
+    }
+
+    /* Media Query for Tablets Ipads portrait mode */
+    @media (min-width: 768px) and (max-width: 1024px){
+        :is(.gameboard-md) > .cell {
+            border-right: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            height: 40px;
+            width: 40px;
+        }
+
+        :is(.gameboard-md-even) > .cell {
+            border-right: 1px solid #000000;
+            border-bottom: 1px solid #000000;
+            height: 40px;
+            width: 40px;
+        }
+    }
+
+        .cell.snake {
+            background-color: green !important;
+        }
+        .cell.blazing {
+            background-color: orange;
+        }
+        .cell.shadow {
+            background-color: purple;
+        }
+        .cell.empty {
+            background-color: white;
+        }
+        .cell.pellet {
+            background-color: black;
+        }
+        .cell.parcel {
+            background-color: #bc8c47;
+        }
+        .cell.delivery-point {
+            background-color: #d3d3d3;
+        }
+        .cell.portal {
+            background-color: black;
+        }

@@ -1,0 +1,48 @@
+<div class="row col-12 text-center">
+    <span class="display-5">
+        <img class="img-fluid" style="width:90px" src="/assets/images/angular.svg">
+        SnakeNg
+    </span>
+</div>
+
+<div class="row mt-3">
+    <div class="col-3"></div>
+    <div class="col-2">
+        <button type="button" [routerLink]="'/'" class="btn btn-outline-danger">
+            <i class="bi bi-chevron-compact-left float-start"></i>
+            Main Menu
+        </button>
+    </div>
+    <div class="col-2 text-center">
+        <p class="display-6">High Scores</p>
+    </div>
+    <div class="col-5"></div>
+</div>
+
+<div class="row">
+    <div class="col-2 offset-5">
+        <label>Game Mode</label>
+        <select [(ngModel)]="selectedGameMode" class="form-control form-select" (change)="filterHighScores()">
+            <option *ngFor="let mode of gameModes">{{mode}}</option>
+        </select>
+    </div>
+</div>
+
+<div class="row col-6 offset-3 mt-3">
+    <table class="table table-hover table-bordered">
+        <thead class="bg-danger text-white border-bottom ">
+            <tr>
+                <th>Player Name</th>
+                <th>Game Mode</th>
+                <th>Score</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let highScore of displayedHighScores">
+                <td>{{highScore.playerName}}</td>
+                <td>{{highScore.gameMode}}</td>
+                <td>{{highScore.score}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
